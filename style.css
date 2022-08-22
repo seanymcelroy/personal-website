@@ -1,0 +1,31 @@
+
+*{
+    font-family: sofia-pro, Roboto, Helvetica, Arial, sans-serif;
+}
+body{
+    margin:0;
+    padding: 0;
+    color: var();
+    /* Set transition on background + color properties */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+
+:root{
+    --columbia-blue: #CAE9FF;
+    --indigo-dye: #1b4965;
+    --blacky: #000;
+    --whitey: #fff;
+}
+
+.light{
+    --bg-color: var(--whitey);
+    --text-color: var(--blacky);
+}
+
+.dark{
+    --bg-color: var(--blacky);
+    --text-color: var(--whitey);
+}
