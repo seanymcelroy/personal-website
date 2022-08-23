@@ -1,19 +1,4 @@
 
-*{
-    font-family: sofia-pro, Roboto, Helvetica, Arial, sans-serif;
-}
-body{
-    margin:0;
-    padding: 0;
-    color: var();
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    /* Set transition on background + color properties */
-    transition: background-color 500ms ease-in-out, color 1000ms ease-in-out;
-}
-
-
-
 :root{
     --columbia-blue: #CAE9FF;
     --indigo-dye: #1b4965;
@@ -30,3 +15,38 @@ body{
     --bg-color: var(--blacky);
     --text-color: var(--whitey);
 }
+
+body{
+    margin:0;
+    padding: 0;
+    font-family: sofia-pro, Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    /* Set transition on background + color properties */
+    transition: background-color 500ms ease-in-out, color 1000ms ease-in-out;
+}
+
+.navbar{
+    background-color: grey;
+    height: 100px;
+}
+
+.navbar-nav{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: currentColor;
+}
+
+
