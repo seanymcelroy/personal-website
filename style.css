@@ -6,9 +6,10 @@ body{
     margin:0;
     padding: 0;
     color: var();
-    /* Set transition on background + color properties */
     background-color: var(--bg-color);
     color: var(--text-color);
+    /* Set transition on background + color properties */
+    transition: background-color 500ms ease-in-out, color 1000ms ease-in-out;
 }
 
 
