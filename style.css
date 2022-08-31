@@ -37,13 +37,14 @@ ul{
 }
 .navbar-nav{
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     height: 100%;
     align-items: center;
 }
 
-.navbar-nav a{
+.navbar-nav > *{
     background-color: blue;
+    margin-right: 2rem;
     height: 100%;
     display: flex;
     align-items: center;
@@ -53,5 +54,19 @@ ul{
 a{
     text-decoration: none;
     color: currentColor;
+}
+
+.switcher{
+    position: relative;
+    display: inline-block;
+}
+
+.icon-box{
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
