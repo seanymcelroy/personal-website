@@ -80,4 +80,6 @@ a{
 
 svg{
     fill: var(--text-color);
+    transition: fill 1000ms ease-in-out;
 }
+
