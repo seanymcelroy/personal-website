@@ -77,7 +77,7 @@ ul{
     justify-content: flex-end;
     height: 100%;
     align-items: center;
-    
+
 }
 
 .navbar-nav > *{
@@ -189,4 +189,13 @@ main{
 .tick{
     fill: #50cd89;
     margin-left: 5rem;
+}
+
+.primary-btn{
+    color: var(--whitey);
+}
+
+.primary-btn:hover{
+    background-color: #007ec5;
+    transition: background-color 300ms ease-in-out;
 }
