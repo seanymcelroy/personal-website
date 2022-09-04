@@ -1,6 +1,6 @@
 "strict";
 
-let btn = document.getElementsByClassName("icon-box")[0];
+let btn = document.getElementsByClassName("theme-switch")[0];
 let moon = document.getElementById("moon_svg")
 let sun = document.getElementById("sun_svg")
 const body =document.body;

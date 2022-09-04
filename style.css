@@ -2,17 +2,21 @@
 :root{
     --primary: #009ef7;
     --blacky: #000;
+    --light-soft-text: #545454;
+    --dark-soft-text: #adadad;
     --whitey: #fff;
 }
 
 .light{
     --bg-color: var(--whitey);
     --text-color: var(--blacky);
+    --soft-text: var(--light-soft-text);
 }
 
 .dark{
     --bg-color: var(--blacky);
     --text-color: var(--whitey);
+    --soft-text: var(--dark-soft-text);
 }
 
 body{
@@ -30,6 +34,17 @@ body{
 
 h1{
 font-size: 40px;
+font-weight: 700;
+}
+em{
+    font-style: normal;
+    color: var(--primary);
+}
+
+p{
+    margin-top: 40px;
+    font-weight: 200;
+    color: var(--soft-text);
 }
 
 .page-heading{
@@ -49,6 +64,7 @@ font-size: 40px;
     align-items: center;
     padding: 20px;
     font-size: 30px;
+    /* color: var(--primary); */
 }
 
 ul{
@@ -61,14 +77,16 @@ ul{
     justify-content: flex-end;
     height: 100%;
     align-items: center;
+    
 }
 
 .navbar-nav > *{
-    margin-right: 1.5rem;
+    margin-right: 1.25rem;
     padding: 8px 10px;
     border-radius: 8px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 
@@ -84,11 +102,23 @@ a:hover, a>svg:hover{
     color: var(--whitey);
 }
 
-
+.icon-box{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6px;
+}
 
 .icon-box:hover{
     background-color: var(--primary);
 }
+
+.icon-box:hover svg{
+    fill:#fff;
+    transition: 0ms;
+}
+
 
 .hidden{
     display: none;
@@ -100,23 +130,17 @@ svg{
 }
 
 main{
-    padding-top: 4rem;
+    padding: 4rem 4rem;
     display: flex;
     /* align-items: center; */
     justify-content: center;
 }
 
 .card{
-    width: 500px;
-    /* height: 500px; */
-    /* background-color: grey; */
-    border: 1px solid var(--primary);
-    border-radius: 10px;
-}
-.card{
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
 }
 .card-head{
     padding: 25px;
@@ -159,9 +183,10 @@ main{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
 }
 
 .tick{
     fill: #50cd89;
-    margin-left: 1rem;
+    margin-left: 5rem;
 }
