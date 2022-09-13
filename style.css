@@ -2,8 +2,8 @@
 :root{
     --primary: #009ef7;
     --blacky: #000;
-    --light-soft-text: #545454;
-    --dark-soft-text: #adadad;
+    --light-soft-text: hsl(0, 0%, 50%);
+    --dark-soft-text: hsl(0, 0%, 70%);
     --whitey: #fff;
 }
 
@@ -43,7 +43,7 @@ em{
 
 p{
     margin-top: 40px;
-    font-weight: 200;
+    font-weight: 500;
     color: var(--soft-text);
 }
 
@@ -114,10 +114,10 @@ a:hover, a>svg:hover{
     background-color: var(--primary);
 }
 
-.icon-box:hover svg{
+/* .icon-box:hover svg{
     fill:#fff;
     transition: 0ms;
-}
+} */
 
 
 .hidden{
@@ -132,6 +132,7 @@ svg{
 main{
     padding: 4rem 4rem;
     display: flex;
+    flex-direction: column;
     /* align-items: center; */
     justify-content: center;
 }
@@ -139,8 +140,21 @@ main{
 .card{
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--primary);
+    border: 2px solid var(--primary);
     border-radius: 10px;
+    /* width: 450px; */
+    max-width: 450px;
+    height: 750px;
+    transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out;
+}
+.card:hover, .card:focus    {
+    box-shadow: 0px 3px 15px rgb(0,0,0,0.2);
+    transform: translateY(-1rem);
+    transform: scale(1.05,1.05);
+    /* border: 3px solid var(--primary); */
+}
+.filler{
+    height: 100%;
 }
 .card-head{
     padding: 25px;
@@ -199,3 +213,26 @@ main{
     background-color: #007ec5;
     transition: background-color 300ms ease-in-out;
 }
+
+.card-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+    gap: 2rem;
+}
+
+#experience{
+    margin-top: 150px;
+}
+
+@media only screen and (max-width: 650px){
+    main{
+        padding: 1.5rem
+    }
+    .card-list{
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .navbar-nav{
+        display: none;
+    }
+};
