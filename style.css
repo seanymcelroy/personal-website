@@ -4,6 +4,7 @@ html{
 
 :root{
     --primary: #009ef7;
+    --primary-hov: #009cf750;
     --blacky: #000;
     --light-soft-text: hsl(0, 0%, 50%);
     --dark-soft-text: hsl(0, 0%, 70%);
@@ -34,10 +35,19 @@ body{
 .navbar{
     height: 5vh;
     display: flex;
-    justify-content: space-between;
+    gap: 1.25rem;
+    justify-content: center;
     /* position: relative; */
 
 }
+
+.content{
+    margin: auto;
+    max-width: min(90%, 1693px);
+    padding: 2rem;
+}
+
+
 .hero{
     display: flex;
     flex-direction: column;
@@ -65,10 +75,8 @@ h1{
     margin-top: 100px;
 }
 
-.content{
-    margin: auto;
-    max-width: 1693px;
-    padding: 2rem;
+
+.projects{
     min-height: 100vh;
 }
 
@@ -89,13 +97,7 @@ h1{
     width: 50%;
 }
 
-.navbar-nav{
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    align-items: center;
-    width: 100%;
-}
+
 
 
 em{
@@ -129,27 +131,16 @@ ul{
     margin: 0;
 }
 
-
-.navbar-nav > *{
-    margin-right: 1.25rem;
-    padding: 8px 10px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
 a{
     text-decoration: none;
     color: currentColor;
 }
 a:hover, a>svg:hover{
     /* background-color: var(--bg-color); */
-    background-color: var(--primary);
+    background-color: var(--primary-hov);
     /* box-shadow: 0px 3px 10px rgb(0,0,0,0.2); */
     transition: background-color 150ms ease-in-out, color 150ms ease-in-out;
-    color: var(--whitey);
+    /* color: var(--whitey); */
 }
 
 .icon-box{
@@ -161,7 +152,7 @@ a:hover, a>svg:hover{
 }
 
 .icon-box:hover{
-    background-color: var(--primary);
+    background-color: var(--primary-hov);
 }
 
 
@@ -190,9 +181,7 @@ svg{
     transform: scale(1.05,1.05);
     /* border: 3px solid var(--primary); */
 }
-.card-filler{
-    height: 100%;
-}
+
 .card-head{
     padding: 25px;
     display: flex;
@@ -209,7 +198,9 @@ svg{
     align-items: center;
     padding: 25px;
 }
-
+.card-filler{
+    height: 100%;
+}
 .card-foot{
     border-top: 1px solid var(--primary);
     display: flex;
@@ -218,10 +209,13 @@ svg{
     padding: 25px;
 }
 
-.card-foot > a{
-    padding: 8px 20px 10px 20px;
+.card-foot-cta{
+    /* padding: 8px 20px 10px 20px; */
+    padding: 1rem 1.25rem;
+    border: 1px solid #007ec5;
     border-radius: 25px;
-    background-color: var(--primary);
+    width: 200px;
+    text-align: center;
 }
 
 .feature-list{
@@ -240,15 +234,6 @@ svg{
 .tick{
     fill: #50cd89;
     margin-left: 5rem;
-}
-
-.primary-btn{
-    color: var(--whitey);
-}
-
-.primary-btn:hover{
-    background-color: #007ec5;
-    transition: background-color 300ms ease-in-out;
 }
 
 .card-list{
