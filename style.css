@@ -1,3 +1,5 @@
+/* General */
+
 html{
     scroll-behavior: smooth;
 }
@@ -32,21 +34,36 @@ body{
     transition: background-color 500ms ease-in-out, color 1000ms ease-in-out;
 }
 
+h1{
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    margin: 1rem 0;
+}
+
+a{
+    text-decoration: none;
+    color: currentColor;
+}
+
+a:hover{
+    background-color: var(--primary-hov);
+    transition: background-color 150ms ease-in-out, color 150ms ease-in-out;
+}
+
+/* ENd of general */
+
+
+/*  */
+/*  */
+/*  */
+
+/* Web Components */
 .navbar{
     height: 5vh;
     display: flex;
-    gap: 1.25rem;
+    gap: 5rem;
     justify-content: center;
-    /* position: relative; */
-
+    align-items: center;
 }
-
-.content{
-    margin: auto;
-    max-width: min(90%, 1693px);
-    padding: 2rem;
-}
-
 
 .hero{
     display: flex;
@@ -57,15 +74,55 @@ body{
     justify-content: center;
 }
 
+.about{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.projects{
+    min-height: 100vh;
+}
+
+/* End of Web Components */
+
+/*  */
+/*  */
+/*  */
+
+
+/* Header */
+.icon-box{
+    cursor: pointer;
+    display: flex;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.icon-box:hover{
+    background-color: var(--primary-hov);
+}
+/* End of Header */
+
+/*  */
+/*  */
+/*  */
+
+.content{
+    margin: auto;
+    max-width: min(90%, 1693px);
+    padding: 2rem;
+}
+
+
+
+
 .hi{
     font-size: clamp(1rem, 2vw, 1.5rem);
     color: #50cd89;
 }
 
-h1{
-    font-size: clamp(3.5rem, 8vw, 7rem);
-    margin: 1rem 0;
-}
+
 .cta{
     padding: 1rem 1.25rem;
     border: 1px solid #007ec5;
@@ -76,16 +133,9 @@ h1{
 }
 
 
-.projects{
-    min-height: 100vh;
-}
 
 
-.about{
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-}
+
 .me{
     background-color: white;
     height: 100%;
@@ -131,29 +181,10 @@ ul{
     margin: 0;
 }
 
-a{
-    text-decoration: none;
-    color: currentColor;
-}
-a:hover, a>svg:hover{
-    /* background-color: var(--bg-color); */
-    background-color: var(--primary-hov);
-    /* box-shadow: 0px 3px 10px rgb(0,0,0,0.2); */
-    transition: background-color 150ms ease-in-out, color 150ms ease-in-out;
-    /* color: var(--whitey); */
-}
 
-.icon-box{
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 6px;
-}
 
-.icon-box:hover{
-    background-color: var(--primary-hov);
-}
+
+
 
 
 .hidden{
@@ -239,16 +270,16 @@ svg{
 .card-list{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
     grid-gap: 2rem;
 }
 
+/*  */
+/*  */
+/*  */
 
+/* PHONE Size */
 
 @media only screen and (max-width: 650px){
-    .content{
-        padding: 1.5rem
-    }
     .card-list{
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
