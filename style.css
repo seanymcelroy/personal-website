@@ -20,9 +20,8 @@
 }
 
 body{
-    margin:0;
-    padding: 0;
-
+    margin:auto;
+    max-width: 1810px;
     display: flex;
     flex-direction: column;
     font-family: sofia-pro, Roboto, Helvetica, Arial, sans-serif;
@@ -130,10 +129,9 @@ svg{
 }
 
 main{
-    padding: 4rem 4rem;
+    padding: 4rem;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     justify-content: center;
 }
 
@@ -142,8 +140,6 @@ main{
     flex-direction: column;
     border: 2px solid var(--primary);
     border-radius: 10px;
-    /* width: 450px; */
-    max-width: 450px;
     height: 750px;
     transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out;
 }
@@ -218,7 +214,7 @@ main{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-    gap: 2rem;
+    grid-gap: 2rem;
 }
 
 #experience{
