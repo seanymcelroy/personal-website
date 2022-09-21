@@ -20,15 +20,33 @@
 }
 
 body{
-    margin:auto;
-    max-width: 1810px;
-    display: flex;
-    flex-direction: column;
+    /* margin:auto;
+    max-width: 1810px; */
     font-family: sofia-pro, Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     /* Set transition on background + color properties */
     transition: background-color 500ms ease-in-out, color 1000ms ease-in-out;
+}
+
+.navbar{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.navbar-nav{
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    align-items: center;
+
+}
+
+#content{
+    margin: auto;
+    max-width: 1810px;
 }
 
 h1{
@@ -50,13 +68,7 @@ p{
     margin-bottom: 100px;
 }
 
-.navbar{
-    /* background-color: grey; */
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
 
-}
 
 .logo{
     display: flex;
@@ -71,13 +83,7 @@ ul{
     padding: 0;
     margin: 0;
 }
-.navbar-nav{
-    display: flex;
-    justify-content: flex-end;
-    height: 100%;
-    align-items: center;
 
-}
 
 .navbar-nav > *{
     margin-right: 1.25rem;
@@ -113,11 +119,6 @@ a:hover, a>svg:hover{
     background-color: var(--primary);
 }
 
-/* .icon-box:hover svg{
-    fill:#fff;
-    transition: 0ms;
-} */
-
 
 .hidden{
     display: none;
@@ -128,12 +129,7 @@ svg{
     transition: fill 1000ms ease-in-out;
 }
 
-main{
-    padding: 4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+
 
 .card{
     display: flex;
