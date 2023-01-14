@@ -101,9 +101,6 @@ a:hover{
     justify-content: center;
 }
 
-.about{
-    height: 100vh;
-}
 
 .projects{
     min-height: 100vh;
@@ -175,10 +172,9 @@ a:hover{
     height: 100%;
     width: 50%;
 }
+
 .about-text{
     background-color: blue;
-    height: 100%;
-    width: 50%;
 }
 
 .swe{
@@ -297,6 +293,24 @@ svg{
     grid-gap: 50px;
 }
 
+.abm{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+}
+
+.about{
+    display: flex;
+    flex-direction: row;
+    background: red;
+    height: 200px;
+}
+.about img{
+    width: 200px;
+}
+
+
 .tag.token{
     color: rgb(244 114 182)
 }
@@ -340,9 +354,9 @@ svg{
 #code-editor{
     background: rgb(30 41 59);
     border-radius: 0.75rem;
-    width: 50vw;
     font-size: 1rem;
     font-family: monospace;
+    height: 300px;
 }
 #code-main{
     display: flex;
