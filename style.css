@@ -45,10 +45,7 @@ em{
     color: var(--primary);
 }
 
-h1{
-    font-size: clamp(4rem, 8vw, 7rem);
-    margin: 0;
-}
+
 
 h2{
     font-size: clamp(2rem, 8vw, 4rem);
@@ -76,7 +73,6 @@ a:hover{
     position:absolute;
     left:0;
     right:0;
-    top: 15px;
     margin-left:auto;
     margin-right:auto;
 
@@ -85,6 +81,7 @@ a:hover{
     gap: 5rem;
     justify-content: center;
     align-items: center;
+    height: 10vh;
 }
 
 .content{
@@ -93,13 +90,7 @@ a:hover{
     padding: 2rem;
 }
 
-.hero{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 90%;
-    justify-content: center;
-}
+
 
 
 .projects{
@@ -132,13 +123,27 @@ a:hover{
 
 /* Hero */
 
+.hero{
+    display: flex;
+    flex-direction: row;
+    padding-top: 20rem;
+    height: 90vh;
+    width: 100%;
+}
 
 
-
+.code-output{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 
 .hi{
     font-size: clamp(1.25rem, 2vw, 1.5rem);
     font-weight: 200;
+}
+.sean{
+    font-size: 5rem;
 }
 
 .programmer{
@@ -146,6 +151,7 @@ a:hover{
     font-family: source-code-pro, monospace;
     font-weight: 400;
     color: #50cd89;
+    margin-bottom: 3rem;
 }
 
 
@@ -155,8 +161,83 @@ a:hover{
     border-radius: 5px;
     width: 200px;
     text-align: center;
-    margin-top: 5rem;
 }
+
+
+/* COde ditor */
+
+#code-editor{
+    background: rgb(30 41 59);
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-family: monospace;
+    height: 300px;
+    width: 100%;
+}
+
+
+.tag.token{
+    color: rgb(244 114 182)
+}
+.tag.token.attr-name{
+    color: rgb(203 213 225)
+}
+.tag.token.attr-value{
+    color: rgb(125 211 252)
+}
+
+.tag.punctuation.token{
+    color: rgb(100 116 139);
+}
+
+
+#code-header{
+    height: 2rem;
+    border-bottom: 1px solid rgb(100 116 139 / 30%);
+    padding-left: 0.75rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 7px;
+}
+.code-ball{
+    background: rgb(71 85 105);
+    border-radius: 50%;
+    width: 0.625rem;
+    height: 0.625rem;
+}
+.ball-1{
+    background: rgb(255, 96, 92)
+}
+.ball-2{
+    background: rgb(255, 189, 68)
+}
+.ball-3{
+    background: rgb(0, 202, 78)
+}
+
+
+
+#code-side{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: right;
+    color: rgb(71 85 105);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    user-select: none;
+}
+#code-main{
+    display: flex;
+    flex-direction: row;
+}
+
+code{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+}
+
 
 /* End of Hero */
 
@@ -293,96 +374,26 @@ svg{
     grid-gap: 50px;
 }
 
-.abm{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 3rem;
-}
-
-.about{
-    display: flex;
-    flex-direction: row;
-    background: red;
-    height: 200px;
-}
-.about img{
-    width: 200px;
-}
 
 
-.tag.token{
-    color: rgb(244 114 182)
-}
-.tag.token.attr-name{
-    color: rgb(203 213 225)
-}
-.tag.token.attr-value{
-    color: rgb(125 211 252)
-}
 
-.tag.punctuation.token{
-    color: rgb(100 116 139);
-}
-
-#code-header{
-    height: 2rem;
-    border-bottom: 1px solid rgb(100 116 139 / 30%);
-    padding-left: 0.75rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 7px;
-}
-.code-ball{
-    background: rgb(71 85 105);
-    border-radius: 50%;
-    width: 0.625rem;
-    height: 0.625rem;
-}
-.ball-1{
-    background: rgb(255, 96, 92)
-}
-.ball-2{
-    background: rgb(255, 189, 68)
-}
-.ball-3{
-    background: rgb(0, 202, 78)
-}
-
-
-#code-editor{
-    background: rgb(30 41 59);
-    border-radius: 0.75rem;
-    font-size: 1rem;
-    font-family: monospace;
-    height: 300px;
-}
-#code-main{
-    display: flex;
-    flex-direction: row;
-}
-#code-side{
-    padding-left: 1rem;
-    padding-right: 1rem;
-    text-align: right;
-    color: rgb(71 85 105);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    user-select: none;
-}
-code{
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 1rem;
-}
 /* End of Card */
 
 /* PHONE Size */
+@media (max-width: 850px){
+    .hero{
+        flex-direction: column;
+        gap: 5rem
+    }
+}
 
-@media only screen and (max-width: 650px){
+@media (max-width: 650px){
     .card-list{
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
-};
+    .hero{
+        padding-top: 5rem;
+    }
+}
+
 
