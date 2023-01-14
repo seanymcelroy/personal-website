@@ -143,7 +143,8 @@ a:hover{
     font-weight: 200;
 }
 .sean{
-    font-size: 5rem;
+    font-size: clamp(3rem, 2vw, 5rem);
+    /* font-size: 5rem; */
 }
 
 .programmer{
@@ -171,8 +172,9 @@ a:hover{
     border-radius: 0.75rem;
     font-size: 1rem;
     font-family: monospace;
-    height: 300px;
     width: 100%;
+    overflow: auto;
+    max-height: 400px;
 }
 
 
@@ -238,7 +240,17 @@ code{
     padding-left: 1rem;
 }
 
-
+.blinker { 
+    animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1,0,0,1);
+    animation-duration: 1s;
+    border:0.4px solid white;
+  }
+  
+  @keyframes blinker { 
+    from { opacity: 1.0; } to { opacity: 0.0; }
+  }
 /* End of Hero */
 
 /*  */
@@ -392,7 +404,7 @@ svg{
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
     .hero{
-        padding-top: 5rem;
+        padding-top: 10rem;
     }
 }
 
