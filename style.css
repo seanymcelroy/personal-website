@@ -18,8 +18,18 @@ html{
     --text-color: var(--blacky);
     --soft-text: var(--light-soft-text);
     --card-shadow: rgba(0, 0, 0, 0.2);
+    --code-shadow: rgba(0, 0, 0, 0.2);
     --card-shadow-hover: rgba(0, 0, 0, 0.5);
-
+    --card-bg: rgba(249, 249, 249, 0.9);
+    --code-header-bottom-border: 1px solid rgb(100 116 139 / 10%);
+    --code-editor-bg: rgba(249, 249, 249, 0.9);
+    --code-editor-tag: rgb(243, 87, 168);
+    --code-editor-attr-name: #009ef7;
+    --code-editor-attr-value: #8400f7;
+    --code-editor-punctuation: #8400f7;
+    --code-innertext: #000;
+    --code-side: #c3c3c3;
+    
 }
 
 .dark{
@@ -28,6 +38,16 @@ html{
     --soft-text: var(--dark-soft-text);
     --card-shadow: rgb(255, 255, 255, 0.2);
     --card-shadow-hover: rgb(255, 255, 255, 0.5);
+    --card-bg: rgb(30 41 59/0.6);
+    /* --card-bg: rgb(30 41 59); */
+    --code-header-bottom-border: 1px solid rgb(100 116 139 / 30%);
+    --code-editor-bg: rgb(30 41 59);
+    --code-editor-tag: rgb(244 114 182);
+    --code-editor-attr-name: rgb(203 213 225);
+    --code-editor-attr-value: rgb(125 211 252);
+    --code-editor-punctuation: rgb(125 211 252);
+    --code-innertext: #fff;
+    --code-side: rgb(71 85 105);
 }
 
 body{
@@ -36,13 +56,18 @@ body{
     color: var(--text-color);
     margin: 0;
     /* Set transition on background + color properties */
-    transition: background-color 500ms ease-in-out, color 1000ms ease-in-out;
+    /* transition: background-color 500ms ease-in-out, color 1000ms ease-in-out; */
 }
 
 
 em{
     font-style: normal;
     color: var(--primary);
+}
+
+.blue{
+    color: var(--primary);
+    transition: color 500ms ease-in-out, color 500ms ease-in-out;
 }
 
 
@@ -151,12 +176,17 @@ a:hover{
     font-size: clamp(1.5rem, 2vw, 1.5rem);
     font-family: source-code-pro, monospace;
     font-weight: 400;
+}
+.code-green{
     color: #50cd89;
-    margin-bottom: 3rem;
+    transition: color 500ms ease-in-out, color 500ms ease-in-out;
 }
 
 
 .cta{
+    margin-top: 3rem;
+}
+.cta a{
     padding: 1rem 1.25rem;
     border: 1px solid #007ec5;
     border-radius: 5px;
@@ -168,39 +198,45 @@ a:hover{
 /* COde ditor */
 
 #code-editor{
-    background: rgb(30 41 59);
+    background: var(--code-editor-bg);
     border-radius: 0.75rem;
     font-size: 1rem;
     font-family: monospace;
     width: 100%;
     overflow: auto;
     max-height: 400px;
+    box-shadow: 0px 3px 15px var(--code-shadow);
+    /* transition: background-color 500ms ease-in-out, color 1000ms ease-in-out; */
 }
 
 
 .tag.token{
-    color: rgb(244 114 182)
+    color: var(--code-editor-tag)
 }
 .tag.token.attr-name{
-    color: rgb(203 213 225)
+    color: var(--code-editor-attr-name)
 }
 .tag.token.attr-value{
-    color: rgb(125 211 252)
+    color: var(--code-editor-attr-value)
 }
 
 .tag.punctuation.token{
-    color: rgb(100 116 139);
+    color: var(--code-editor-punctuation)
+}
+.innertext{
+    color: var(--code-innertext)
 }
 
 
 #code-header{
     height: 2rem;
-    border-bottom: 1px solid rgb(100 116 139 / 30%);
+    border-bottom: var(--code-header-bottom-border);
     padding-left: 0.75rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 7px;
+    
 }
 .code-ball{
     background: rgb(71 85 105);
@@ -224,7 +260,7 @@ a:hover{
     padding-left: 1rem;
     padding-right: 1rem;
     text-align: right;
-    color: rgb(71 85 105);
+    color: var(--code-side);
     padding-top: 1rem;
     padding-bottom: 1rem;
     user-select: none;
@@ -242,6 +278,8 @@ code{
 
 .blinker { 
     animation-name: blinker;
+    opacity: 0;
+    animation-delay:1s;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(1,0,0,1);
     animation-duration: 1s;
@@ -298,7 +336,7 @@ ul{
 
 svg{
     fill: var(--text-color);
-    transition: fill 1000ms ease-in-out;
+    /* transition: fill 1000ms ease-in-out; */
 }
 
 
@@ -308,8 +346,7 @@ svg{
 .card{
     display: flex;
     flex-direction: column;
-    border: 2px solid var(--primary);
-    /* background: #2a2e35; */
+    background: var(--card-bg);
     border-radius: 10px;
     transition: 300ms ease-in-out;
     box-shadow: 0px 3px 15px var(--card-shadow);
@@ -325,16 +362,24 @@ svg{
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid var(--primary);
     font-size: 20px;
 }
 
 .card-body{
+    border-top: 1px solid var(--primary);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px 15px;
+    flex: 1;
     gap: 2rem;
+    border-bottom: 1px solid var(--primary);
+}
+.card-foot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
 }
 
 .card-text{
@@ -361,17 +406,10 @@ svg{
 .card-filler{
     height: 100%;
 }
-.card-foot{
-    border-top: 1px solid var(--primary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 25px;
-}
 
 .card-foot-cta{
     padding: 1rem 1.25rem;
-    border: 1px solid #007ec5;
+    /* border: 1px solid #007ec5; */
     border-radius: 25px;
     width: 200px;
     text-align: center;

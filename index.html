@@ -79,10 +79,10 @@
       <div class="hero">
         <div class="code-output">
           <div class="hi">Hi, my name is</div>
-          <div class="sean">Seán <em>McElroy.</em></div>
-          <div class="programmer">I am a Programmer</div>
-          <div>
-            <a href="#projects" class="cta">View Projects</a>
+          <div class="sean">Seán <span id="mcelroy">McElroy.</span></div>
+          <div id="programmer-green"class="programmer ">I am a Programmer</div>
+          <div class="cta">
+            <a href="#projects" >View Projects</a>
           </div>
         </div>
         <div id="code-editor">
@@ -106,8 +106,7 @@
                   ><span class="tag punctuation token">&gt;</span>
                 </div>
                 <div>
-                  <span>Hi my name is</span
-                  ><span class="blinker"></span>
+                  <span class="innertext">Hi my name is</span>
                 </div>
                 <div>
                   <span class="tag punctuation token">&lt;/</span
@@ -126,8 +125,8 @@
                   ><span class="tag attr-value punctuation token">"</span
                   ><span class="tag punctuation token">&gt;</span>
                 </div>
-                <div>
-                  Sean<span class="tag punctuation token"> &lt;</span><span class="tag token">span</span><span class="tag punctuation token">&gt;</span>McElroy<span class="tag punctuation token">&lt;/</span
+                <div class="innertext">
+                  Sean<span class="tag punctuation token"> &lt;</span><span class="tag token">span</span><span class="tag punctuation token">&gt;</span><span class="innertext">McElroy</span><span class="tag punctuation token">&lt;/</span
                     ><span class="tag token">span</span><span class="tag punctuation token">&gt;</span>
                 </div>
                 <div>
@@ -142,13 +141,13 @@
                   <span class="tag attr-name token">class</span
                   ><span class="tag attr-value punctuation attr-equals token">=</span
                   ><span class="tag attr-value punctuation token">"</span
-                  ><span class="tag attr-value token"
-                  >text-hacker-green</span
-                  ><span class="tag attr-value punctuation token">"</span
+                  ><span id="programmer-text" class="tag attr-value token"
+                  ></span
+                  ><span class="blinker"></span><span class="tag attr-value punctuation token">"</span
                   ><span class="tag punctuation token">&gt;</span>
                 </div>
                 <div>
-                  <span>I am a programmer</span>
+                  <span class="innertext">I am a programmer</span>
                 </div>
                 <div>
                   <span class="tag punctuation token">&lt;/</span
@@ -271,7 +270,6 @@
                 </div>
               </ul>
             </div>
-            <div class="card-filler"></div>
             <div class="card-foot">
               <a class="card-foot-cta" href="">View Project</a>
             </div>
@@ -348,7 +346,6 @@
                 </div>
               </ul>
             </div>
-            <div class="card-filler"></div>
             <div class="card-foot">
               <a class="card-foot-cta" href="">View Project</a>
             </div>
@@ -440,7 +437,6 @@
                 </div>
               </ul>
             </div>
-            <div class="card-filler"></div>
             <div class="card-foot">
               <a class="card-foot-cta" href="">View Project</a>
             </div>
