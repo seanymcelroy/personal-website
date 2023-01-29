@@ -29,6 +29,7 @@ html{
     --code-editor-punctuation: #8400f7;
     --code-innertext: #000;
     --code-side: #c3c3c3;
+    --blinker-color: thin solid black;
     
 }
 
@@ -48,6 +49,7 @@ html{
     --code-editor-punctuation: rgb(125 211 252);
     --code-innertext: #fff;
     --code-side: rgb(71 85 105);
+    --blinker-color: thin solid white;
 }
 
 body{
@@ -283,7 +285,7 @@ code{
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(1,0,0,1);
     animation-duration: 1s;
-    border:0.4px solid white;
+    border:var(--blinker-color);
   }
   
   @keyframes blinker { 
@@ -366,20 +368,21 @@ svg{
 }
 
 .card-body{
-    border-top: 1px solid var(--primary);
+    border-top: var(--code-header-bottom-border);
+    /* border: var(--code-header-bottom-border) 0 var(--code-header-bottom-border) 0; */
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px 15px;
     flex: 1;
     gap: 2rem;
-    border-bottom: 1px solid var(--primary);
+    border-bottom: var(--code-header-bottom-border);
 }
 .card-foot{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 25px;
+    padding: 1.5rem;
 }
 
 .card-text{
