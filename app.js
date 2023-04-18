@@ -1,4 +1,4 @@
-"strict";
+"use strict";
 
 let btn = document.getElementsByClassName("theme-switch")[0];
 let moon = document.getElementById("moon_svg")
@@ -18,21 +18,26 @@ btn.onclick= ()=>{
     }
 }
 
-let i = 0;
 let txt = 'text-hacker-green'; /* The text */
 let speed = 100; /* The speed/duration of the effect in milliseconds */
-setTimeout(typeWriter, 2000);
+setTimeout(() => typeWriter(txt, 'programmer-text'), 2000);
 setTimeout(displayGreen, 3000+speed*txt.length);
-setTimeout(displayBlue, 5000+speed*txt.length);
 
-console.log(speed*txt.length)
+let blueText=` class="text-blue"`
+setTimeout(() => typeWriter(blueText, 'programmer-text-2'), 4000);
+setTimeout(displayBlue, 5000+speed*blueText.length);
 
-function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("programmer-text").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
+function typeWriter(text, target) {
+    let i = 0;
+    type(i, target, text);
+}
+
+function type(i, target, text){
+    if (i < text.length) {
+        document.getElementById(target).innerHTML += text.charAt(i);
+        i++;
+        setTimeout(() => type(i, target, text), speed);
+    }
 }
 
 function displayGreen(){
