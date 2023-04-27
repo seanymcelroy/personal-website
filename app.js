@@ -97,18 +97,23 @@ window.addEventListener("click", (event) => {
   }
 });
 
-const projects = Array.from(document.getElementsByClassName('card'));
-console.log(projects)
+const projectTexts = Array.from(document.getElementsByClassName('card-text'));
+// console.log(projects)
 
 const observer = new IntersectionObserver((entries)=>{
     entries.forEach((entry)=>{
+      if (entry.boundingClientRect.top > 0) {
+        console.log(entry.boundingClientRect.top) 
         if (entry.isIntersecting){
-            entry.target.classList.add('show')
-        }else{
-            entry.target.classList.remove('show')
+            entry.target.parentNode.parentNode.classList.remove('invisible');
+            entry.target.parentNode.parentNode.classList.add('show');
+          }else{
+            entry.target.parentNode.parentNode.classList.remove('show')
+            entry.target.parentNode.parentNode.classList.add('invisible');
         }
+      }
     });
 });
 
-projects.forEach((proj)=>observer.observe(proj));
+projectTexts.forEach((proj)=>observer.observe(proj));
 
