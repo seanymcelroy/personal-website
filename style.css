@@ -154,7 +154,7 @@ a:hover{
     display: flex;
     flex-direction: row;
     padding-top: 20rem;
-    height: fit-content(90vh);
+    height: 90vh;
     width: 100%;
 }
 
@@ -177,25 +177,28 @@ a:hover{
 } */
 
 .text-hacker-green {
-    font-family: source-code-pro, monospace;
-    font-weight: 400;
     color: #50cd89;
-    transition: color 1500ms ease-in-out;
 }
 
-.programmer-before {
+#iAmText {
     font-family: source-code-pro, monospace;
     font-weight: 400;
-    color: var(--text-color);
-    /* transition: all 500ms ease-in-out 0s; */
+    transition: color 1000ms ease-in-out;
+
 }
 
 
 
-.cta{
+#cta{
     margin-top: 3rem;
+    transform: translateX(200px);
+    transition: transform 1s ease-out;
 }
-.cta a{
+
+.slide-right{
+    transform: translateX(0px) !important;
+}
+#cta a{
     padding: 1rem 1.25rem;
     border: 1px solid #007ec5;
     border-radius: 5px;
@@ -203,6 +206,7 @@ a:hover{
     width: 200px;
     text-align: center;
 }
+
 
 
 /* COde ditor */
@@ -234,6 +238,7 @@ a:hover{
     color: var(--code-editor-punctuation)
 }
 .innertext{
+    text-indent: 20px;  /* Adjust as needed */
     color: var(--code-innertext)
 }
 
@@ -292,13 +297,13 @@ code{
 }
 
 .blinker-animate {
-    animation-name: blinker;
+    animation-name: blinky;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(1,0,0,1);
     animation-duration: 1s;
 }
 
-@keyframes blinker {
+@keyframes blinky {
     from { opacity: 1.0; } to { opacity: 0.0; }
 }
 
@@ -420,15 +425,6 @@ svg{
 
 
 
-.card-foot-cta{
-    padding: 1rem 1.25rem;
-    /* border: 1px solid #007ec5; */
-    border-radius: 25px;
-    width: 200px;
-    text-align: center;
-    box-shadow: 0px 0px 5px var(--card-shadow-hover);
-}
-
 
 
 
@@ -467,7 +463,13 @@ svg{
 @media (max-width: 850px){
     .hero{
         flex-direction: column;
-        gap: 5rem
+        gap: 5rem;
+    }
+    code{
+        padding-left: 0;
+    }
+    #code-side{
+        padding-left: 0.5rem;
     }
 }
 
@@ -476,7 +478,8 @@ svg{
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
     .hero{
-        padding-top: 10rem;
+        padding-top: 6rem;
+        height: fit-content;
     }
 }
 
