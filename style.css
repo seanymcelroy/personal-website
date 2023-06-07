@@ -434,7 +434,7 @@ svg{
     grid-gap: 50px;
 }
 
-@media (max-width: 950px){
+@media (max-width: 725px){
     .card-list{
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }

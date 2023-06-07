@@ -72,31 +72,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
   selfCode();
 
-
   // Get elements
-  const card = document.querySelector(".card-body");
+  const cards = Array.from(document.querySelectorAll('.card'));
 
-
-  const projectTexts = Array.from(document.getElementsByClassName('card-text'));
-  console.log(projectTexts)
-
+  // Create Intersection Observer
   const observer = new IntersectionObserver((entries)=>{
       entries.forEach((entry)=>{
-        if (entry.boundingClientRect.top > 0) {
-          console.log(entry.boundingClientRect.top) 
-          if (entry.isIntersecting){
-              entry.target.parentNode.parentNode.classList.remove('invisible');
-              entry.target.parentNode.parentNode.classList.add('show');
-            }else{
-              entry.target.parentNode.parentNode.classList.remove('show')
-              entry.target.parentNode.parentNode.classList.add('invisible');
+          if (entry.boundingClientRect.top > 0) {
+              if (entry.isIntersecting){
+                  entry.target.classList.remove('invisible');
+                  entry.target.classList.add('show');
+              } else{
+                  entry.target.classList.remove('show');
+                  entry.target.classList.add('invisible');
+              }
           }
-        }else{
-          console.log(entry)
-        }
       });
-  });
+  }, { rootMargin: "0px 0px -30% 0px" });
 
-  projectTexts.forEach((proj)=>observer.observe(proj));
+  // Observe each card
+  cards.forEach((card) => observer.observe(card));
+
+
+  // // Get elements
+  // const card = document.querySelector(".card-body");
+
+
+  // const projectTexts = Array.from(document.getElementsByClassName('card-text'));
+  // console.log(projectTexts)
+
+  // const observer = new IntersectionObserver((entries)=>{
+  //     entries.forEach((entry)=>{
+  //       if (entry.boundingClientRect.top > 0) {
+  //         console.log(entry.boundingClientRect.top) 
+  //         if (entry.isIntersecting){
+  //             entry.target.parentNode.parentNode.classList.remove('invisible');
+  //             entry.target.parentNode.parentNode.classList.add('show');
+  //           }else{
+  //             entry.target.parentNode.parentNode.classList.remove('show')
+  //             entry.target.parentNode.parentNode.classList.add('invisible');
+  //         }
+  //       }else{
+  //         console.log(entry)
+  //       }
+  //     });
+  // });
+
+  // projectTexts.forEach((proj)=>observer.observe(proj));
 
 });
