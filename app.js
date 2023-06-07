@@ -8,18 +8,32 @@ document.addEventListener('DOMContentLoaded', function() {
   const moon = document.getElementById("moon_svg")
   const sun = document.getElementById("sun_svg")
 
-  themeSwitchBtn.onclick= ()=>{
-      if (body.classList[0]=="dark"){
-          body.classList.replace("dark", "light")
-          sun.classList.add("hidden")
-          moon.classList.remove("hidden")
-      }else{
-          body.classList.replace("light","dark")
-          moon.classList.add("hidden")
-          sun.classList.remove("hidden")
+  // Apply the theme at the start
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    body.className = savedTheme;
+    if (savedTheme == 'dark') {
+        sun.classList.add("hidden");
+        moon.classList.remove("hidden");
+    } else {
+        moon.classList.add("hidden");
+        sun.classList.remove("hidden");
+    }
+}
 
-      }
-  }
+themeSwitchBtn.onclick = () => {
+    if (body.classList[0] == "dark") {
+        body.classList.replace("dark", "light");
+        sun.classList.add("hidden");
+        moon.classList.remove("hidden");
+        localStorage.setItem('theme', 'light');  // Save the theme
+    } else {
+        body.classList.replace("light", "dark");
+        moon.classList.add("hidden");
+        sun.classList.remove("hidden");
+        localStorage.setItem('theme', 'dark');  // Save the theme
+    }
+}
 
   const iAmText = document.getElementById("iAmText");
   const mcelroy = document.getElementById("mcelroy");
@@ -30,9 +44,14 @@ document.addEventListener('DOMContentLoaded', function() {
   const blueText2 = '="text-blue"';
   const greenBlinker = document.getElementById("blinker-green");
   const blueBlinker = document.getElementById("blinker-blue");
+  const blinkerThree = document.getElementById("blinker-three");
 
   const programmerText = document.getElementById('programmer-text');
   const programmerText2 = document.getElementById('programmer-text-2');
+  const programmerText3 = document.getElementById('programmer-text-3');
+
+  const text3 = ' class';
+  const text4 = '="align-left"'; 
   let speed = 100;
 
   function freeze(ms) {
@@ -67,7 +86,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     await freeze(500)
     mcelroy.classList.add("blue")
-    document.getElementById('cta').classList.add('slide-right');
+
+    await freeze(1500)
+    blueBlinker.classList.add("hidden");
+    blinkerThree.classList.remove("hidden")
+    blinkerThree.classList.add("blinker-animate")
+    for (const char of text3) {
+      programmerText3.innerHTML += `<span class="tag attr-name token">${char}</span>`;
+      await freeze(150); // this will "block" the execution for 100ms
+    }
+    for (const char of text4) {
+      programmerText3.innerHTML += `</span><span class="tag attr-value token">${char}</span>`;
+      await freeze(150); // this will "block" the execution for 100ms
+    }
+    await freeze(500)
+    document.getElementById('cta').classList.add('slide-left');
+
   }
 
   selfCode();
