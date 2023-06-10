@@ -456,6 +456,11 @@ svg{
     transition-delay: 200ms;
 }
 
+footer{
+    text-align: center;
+    background: var(--card-bg);
+    padding: 20px;
+}
 
 
 /* End of Card */
