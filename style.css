@@ -95,7 +95,6 @@ a:hover{
 
 /* Web Components */
 .navbar{
-    position:absolute;
     left:0;
     right:0;
     margin-left:auto;
@@ -113,6 +112,7 @@ a:hover{
     margin: auto;
     max-width: min(90%, 1693px);
     padding: 2rem;
+    padding-top: 0;
 }
 
 
@@ -120,6 +120,7 @@ a:hover{
 
 .projects{
     min-height: 100vh;
+    margin-top: 15px;
 }
 
 /* End of Web Components */
@@ -151,10 +152,12 @@ a:hover{
 .hero{
     display: flex;
     flex-direction: row;
-    padding-top: 20rem;
+    margin-top: 10%;
     height: 90vh;
     width: 100%;
 }
+
+
 
 
 .code-output{
@@ -189,7 +192,7 @@ a:hover{
 
 #cta{
     margin-top: 3rem;
-    transform: translateX(200px);
+    transform: translateX(11rem);
     transition: transform 1s ease-out;
 }
 
@@ -428,15 +431,10 @@ svg{
 
 .card-list{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 50px;
 }
 
-@media (max-width: 725px){
-    .card-list{
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-}
 
 
 .invisible{
@@ -449,7 +447,7 @@ svg{
     transform: translateX(0);
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
-  
+
 
 .card:nth-child(3n - 1){
     transition-delay: 100ms;
@@ -460,20 +458,64 @@ svg{
 
 
 
-
-
 /* End of Card */
+
+@media (max-width: 1110px){
+    .card-list{
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        margin: auto;
+    }
+}
 
 /* PHONE Size */
 @media (max-width: 850px){
+    
     .hero{
         flex-direction: column;
         gap: 5rem;
-    }
+        height: auto;
+        margin-bottom: 100px; 
+        }
+
     code{
         padding-left: 0;
+    }
+    .code-output{
+        font-size: 30px;
     }
     #code-side{
         padding-left: 0.5rem;
     }
+    #cta{
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 300px){
+    .html{
+        font-size: 12px;
+    }
+    .navbar{
+        gap: 3rem;
+    } 
+
+    .code-output{
+        font-size: 20px;
+        line-height: 50px;
+    } 
+
+    #cta{
+        font-size: 12px;
+
+    }
+
+    .hero{
+        gap: 3rem;
+    }
+
+    .content{
+        padding: 1rem;
+    }
+
 }

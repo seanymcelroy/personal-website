@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const codeEdit2 = document.getElementById('programmer-text-2');
   const codeEdit3 = document.getElementById('programmer-text-3');
 
-  const cssAlignLeftText = '="align-left"'; 
+  const cssAlignLeftText = '="left"'; 
   const typeDelay = 150;
   const animationDelay = 400;
 
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
     startBlinking(blinker2)
     await freeze(2000);
     await type(codeEdit2, cssClassText.split("").map(char => `<span class="tag attr-name token">${char}</span>`))
-    await type(codeEdit2, cssClassText.split("").map(char => `</span><span class="tag attr-value token">${char}</span>`))
+    await type(codeEdit2, blueText2.split("").map(char => `</span><span class="tag attr-value token">${char}</span>`))
 
     animate(mcelroyHTML, "blue");
 
