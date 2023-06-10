@@ -2,105 +2,108 @@
 
 // DOMContentLoaded event ensures that the script runs after the entire DOM has been loaded.
 document.addEventListener('DOMContentLoaded', function() {
-  const body =document.body;
 
+  
   const themeSwitchBtn = document.getElementsByClassName("theme-switch")[0];
-  const moon = document.getElementById("moon_svg")
-  const sun = document.getElementById("sun_svg")
-
-  // Apply the theme at the start
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-    body.className = savedTheme;
-    if (savedTheme == 'dark') {
-        sun.classList.add("hidden");
-        moon.classList.remove("hidden");
-    } else {
+  const moon = document.getElementById("moon_svg");
+  const sun = document.getElementById("sun_svg");
+  const body = document.body;  // select the body from the DOM
+  
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+      body.className = savedTheme;
+      if (savedTheme == 'dark') {
         moon.classList.add("hidden");
         sun.classList.remove("hidden");
-    }
-}
-
-themeSwitchBtn.onclick = () => {
-    if (body.classList[0] == "dark") {
-        body.classList.replace("dark", "light");
+      } else {
         sun.classList.add("hidden");
         moon.classList.remove("hidden");
-        localStorage.setItem('theme', 'light');  // Save the theme
-    } else {
-        body.classList.replace("light", "dark");
-        moon.classList.add("hidden");
-        sun.classList.remove("hidden");
-        localStorage.setItem('theme', 'dark');  // Save the theme
-    }
-}
+      }
+  }
+  themeSwitchBtn.onclick = () => {
+      if (body.classList.contains("dark")) {
+          body.classList.replace("dark", "light");
+          sun.classList.add("hidden");
+          moon.classList.remove("hidden");
+          localStorage.setItem('theme', 'light');  // Save the theme
+      } else {
+          body.classList.replace("light", "dark");
+          moon.classList.add("hidden");
+          sun.classList.remove("hidden");
+          localStorage.setItem('theme', 'dark');  // Save the theme
+      }
+  }
 
-  const iAmText = document.getElementById("iAmText");
-  const mcelroy = document.getElementById("mcelroy");
+
+  const iAmTextHTML = document.getElementById("iAmText");
+  const mcelroyHTML = document.getElementById("mcelroy");
+  const ctaBTN = document.getElementById("cta")
   
 
-  const hackerGreenText = 'text-hacker-green';
-  const blueText1 = ' class';
+  const cssHackerText = 'text-hacker-green';
+  const cssClassText = ' class';
   const blueText2 = '="text-blue"';
-  const greenBlinker = document.getElementById("blinker-green");
-  const blueBlinker = document.getElementById("blinker-blue");
-  const blinkerThree = document.getElementById("blinker-three");
+  const blinker1 = document.getElementById("blinker-one");
+  const blinker2 = document.getElementById("blinker-two");
+  const blinker3 = document.getElementById("blinker-three");
 
-  const programmerText = document.getElementById('programmer-text');
-  const programmerText2 = document.getElementById('programmer-text-2');
-  const programmerText3 = document.getElementById('programmer-text-3');
+  const codeEdit1 = document.getElementById('programmer-text');
+  const codeEdit2 = document.getElementById('programmer-text-2');
+  const codeEdit3 = document.getElementById('programmer-text-3');
 
-  const text3 = ' class';
-  const text4 = '="align-left"'; 
-  let speed = 100;
+  const cssAlignLeftText = '="align-left"'; 
+  const typeDelay = 150;
+  const animationDelay = 400;
 
   function freeze(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
+
+  function startBlinking(blinker){
+    blinker.classList.remove("hidden");
+    blinker.classList.add("blinker-animate")
+  }
+  function hideBlink(blinker){
+    blinker.classList.add("hidden");
+  }
+
+  async function type(codeblock, nuCode){
+    for (const char of nuCode) {
+      codeblock.innerHTML += char;
+      await freeze(typeDelay); 
+    }
+  }
+
+  async function animate(element, clazz){
+    await freeze(animationDelay)
+    element.classList.add(clazz)
+  }
   
 
   async function selfCode(){
-    greenBlinker.classList.remove("hidden");
-    greenBlinker.classList.add("blinker-animate")
-    await freeze(2500);
-    for (const char of hackerGreenText) {
-      programmerText.innerHTML += char;
-      await freeze(150); // this will "block" the execution for 100ms
-    }
-    await freeze(500)
-    iAmText.classList.add("text-hacker-green");
-    await freeze(3000)
-    // iAmText.classList.remove("programmer-before");
-    greenBlinker.classList.add("hidden");
-    // 
-    blueBlinker.classList.remove("hidden");
-    blueBlinker.classList.add("blinker-animate")
-    await freeze(2500);
-    for (const char of blueText1) {
-      programmerText2.innerHTML += `<span class="tag attr-name token">${char}</span>`;
-      await freeze(150); // this will "block" the execution for 100ms
-    }
-    for (const char of blueText2) {
-      programmerText2.innerHTML += `</span><span class="tag attr-value token">${char}</span>`;
-      await freeze(150); // this will "block" the execution for 100ms
-    }
-    await freeze(500)
-    mcelroy.classList.add("blue")
+    startBlinking(blinker1)
+    await freeze(1500);
+    await type(codeEdit1, cssHackerText)
 
-    await freeze(1500)
-    blueBlinker.classList.add("hidden");
-    blinkerThree.classList.remove("hidden")
-    blinkerThree.classList.add("blinker-animate")
-    for (const char of text3) {
-      programmerText3.innerHTML += `<span class="tag attr-name token">${char}</span>`;
-      await freeze(150); // this will "block" the execution for 100ms
-    }
-    for (const char of text4) {
-      programmerText3.innerHTML += `</span><span class="tag attr-value token">${char}</span>`;
-      await freeze(150); // this will "block" the execution for 100ms
-    }
-    await freeze(500)
-    document.getElementById('cta').classList.add('slide-left');
+    animate(iAmTextHTML, "text-hacker-green");
+    await freeze(2000)
+    hideBlink(blinker1);
+    // 
+    startBlinking(blinker2)
+    await freeze(2000);
+    await type(codeEdit2, cssClassText.split("").map(char => `<span class="tag attr-name token">${char}</span>`))
+    await type(codeEdit2, cssClassText.split("").map(char => `</span><span class="tag attr-value token">${char}</span>`))
+
+    animate(mcelroyHTML, "blue");
+
+    await freeze(2000)
+    hideBlink(blinker2)
+
+    startBlinking(blinker3)
+    await type(codeEdit3, cssClassText.split("").map(char => `<span class="tag attr-name token">${char}</span>`))
+    await type(codeEdit3, cssAlignLeftText.split("").map(char => `</span><span class="tag attr-value token">${char}</span>`))
+
+    animate(ctaBTN, "slide-left");
 
   }
 
@@ -126,32 +129,5 @@ themeSwitchBtn.onclick = () => {
 
   // Observe each card
   cards.forEach((card) => observer.observe(card));
-
-
-  // // Get elements
-  // const card = document.querySelector(".card-body");
-
-
-  // const projectTexts = Array.from(document.getElementsByClassName('card-text'));
-  // console.log(projectTexts)
-
-  // const observer = new IntersectionObserver((entries)=>{
-  //     entries.forEach((entry)=>{
-  //       if (entry.boundingClientRect.top > 0) {
-  //         console.log(entry.boundingClientRect.top) 
-  //         if (entry.isIntersecting){
-  //             entry.target.parentNode.parentNode.classList.remove('invisible');
-  //             entry.target.parentNode.parentNode.classList.add('show');
-  //           }else{
-  //             entry.target.parentNode.parentNode.classList.remove('show')
-  //             entry.target.parentNode.parentNode.classList.add('invisible');
-  //         }
-  //       }else{
-  //         console.log(entry)
-  //       }
-  //     });
-  // });
-
-  // projectTexts.forEach((proj)=>observer.observe(proj));
 
 });
