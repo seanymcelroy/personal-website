@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const sun = document.getElementById("sun_svg");
   const body = document.body;  // select the body from the DOM
 
-  const copywrightDateHTML = document.getElementById("copywrightDate");
-  copywrightDateHTML.innerHTML= new Date().getFullYear();
+  // const copywrightDateHTML = document.getElementById("copywrightDate");
+  // copywrightDateHTML.innerHTML= new Date().getFullYear();
   
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme) {
