@@ -21,11 +21,12 @@ html{
     --text-color: var(--blacky);
     --soft-text: var(--light-soft-text);
     --card-shadow: rgba(0, 0, 0, 0.2);
-    --code-shadow: rgba(0, 0, 0, 0.2);
+    
+    --code-shadow: rgba(0, 0, 0, 0.1);
     --card-shadow-hover: rgba(0, 0, 0, 0.5);
     --card-bg: rgba(217, 231, 255, 0.1);
     --code-header-bottom-border: 1px solid rgb(100 116 139 / 10%);
-    --code-editor-bg: rgba(249, 249, 249, 0.9);
+    --code-editor-bg: rgba(249, 249, 249, 0.4);
     --code-editor-tag: rgb(243, 87, 168);
     --code-editor-attr-name: #009ef7;
     --code-editor-attr-value: #8400f7;
@@ -47,7 +48,7 @@ html{
     /* --card-bg: rgb(30 41 59/0.6); */
     /* --card-bg: rgb(30 41 59); */
     --code-header-bottom-border: 1px solid rgb(100 116 139 / 30%);
-    --code-editor-bg: rgb(30 41 59);
+    --code-editor-bg: rgba(30, 41, 59, 0.4);
     --code-editor-tag: rgb(244 114 182);
     --code-editor-attr-name: rgb(203 213 225);
     --code-editor-attr-value: rgb(125 211 252);
@@ -227,7 +228,9 @@ a:hover{
     /* overflow: auto; */
     /* max-height: 400px; */
     height: max-content;
-    box-shadow: 0px 3px 15px var(--code-shadow);
+    /* box-shadow: 0px 3px 15px var(--code-shadow); */
+    box-shadow: 0px 3px 15px var(--card-shadow);
+    
     /* transition: background-color 500ms ease-in-out, color 1000ms ease-in-out; */
 }
 
@@ -548,7 +551,7 @@ svg{
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 150px;
+    gap: 5rem;
     flex-wrap: wrap;
 }
 
@@ -557,6 +560,14 @@ svg{
     pointer-events: none; /* Prevent hover effect */
     text-decoration: none; /* Remove underline on hover */
 }
+
+.weather-card {
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 3px 15px var(--card-shadow);
+}
+
+
 
 
 /* End of Card */
@@ -583,6 +594,7 @@ svg{
         padding-left: 0;
     }
     .code-output{
+        font-family: "ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji";
         font-size: 30px;
     }
     #code-side{

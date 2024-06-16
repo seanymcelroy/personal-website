@@ -133,4 +133,29 @@ document.addEventListener('DOMContentLoaded', function() {
   // Observe each card
   cards.forEach((card) => observer.observe(card));
 
+  // Function to resize the iframe based on screen size
+function resizeIframe() {
+  var iframe = document.getElementById('windy-iframe');
+  var screenWidth = window.innerWidth;
+
+  // Adjust iframe width based on screen width
+  if (screenWidth >= 1200) {
+      iframe.width = 900;
+      iframe.height = 600;
+  } else if (screenWidth >= 768) {
+      iframe.width = 650;
+      iframe.height = 450;
+  } else {
+      iframe.width = 300;
+      iframe.height = 450;
+  }
+}
+
+// Initial call to resize on page load
+resizeIframe();
+
+// Event listener to resize on window resize
+window.addEventListener('resize', resizeIframe);
+
+
 });

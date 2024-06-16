@@ -605,11 +605,15 @@
 
 
       <div id="flying">
-        <h2>I may be in the air 🛩️</h2>
+        <h2>Good weather? I may be in the air 🛩️</h2>
         <div class="flyingzone">
-          <iframe width="650" height="450" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=kt&zoom=6&overlay=wind&product=ecmwf&level=surface&lat=53.081&lon=-7.537&pressure=true&message=true" frameborder="0"></iframe>
-          <a href="javascript:void(0);" class="no-hover-effect" id="metartaf-oNjo2dsR" style="font-size:18px; font-weight:500; color:#000; width:300px; height:435px; display:block">METAR Weston Airfield</a>
-<script async defer crossorigin="anonymous" src="https://metar-taf.com/embed-js/EIWT?bg_color=00d4ff&station_id=EIME&qnh=hPa&rh=rh&target=oNjo2dsR"></script>
+          <div class="weather-card">
+            <iframe id="windy-iframe" width="650" height="450" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=kt&zoom=6&overlay=wind&product=ecmwf&level=surface&lat=53.081&lon=-7.537&pressure=true&message=true" frameborder="0"></iframe>
+          </div>
+          <div class="weather-card" style="padding: 5px;">
+            <a href="javascript:void(0);" class="no-hover-effect" id="metartaf-oNjo2dsR" style="font-size:18px; font-weight:500; color:#000; width:300px; height:435px; display:block">METAR Weston Airfield</a>
+            <script async defer crossorigin="anonymous" src="https://metar-taf.com/embed-js/EIWT?bg_color=00d4ff&station_id=EIME&qnh=hPa&rh=rh&target=oNjo2dsR"></script>
+          </div>
         </div>
       </div>
     </div>
