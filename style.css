@@ -543,10 +543,19 @@ svg{
     transition-delay: 200ms;
 }
 
-footer{
-    text-align: center;
-    background: var(--card-bg);
-    padding: 20px;
+
+.flyingzone{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    flex-wrap: wrap;
+}
+
+/* Remove hover effect for METAR link */
+.no-hover-effect {
+    pointer-events: none; /* Prevent hover effect */
+    text-decoration: none; /* Remove underline on hover */
 }
 
 
