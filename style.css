@@ -494,6 +494,19 @@ svg{
 
 }
 
+.stat-card-orange:hover {
+    box-shadow: 0 4px 20px #FFA500;
+}
+.stat-card-green:hover {
+    box-shadow: 0 4px 20px #6be570;
+}
+.stat-card-pink:hover {
+    box-shadow: 0 4px 20px #fc508a;
+}
+.stat-card-blue:hover {
+    box-shadow: 0 4px 20px #90D5FF;
+}
+
 
 .divider {
     height: 2px;
