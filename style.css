@@ -447,13 +447,34 @@ svg{
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 300px));
     gap: 40px;
     padding: 20px;
-    max-width: 1200px;
+    max-width: 1500px;
     width: 100%;
     justify-content: center;
 }
+
+/* Default: 1x4 layout */
+@media (min-width: 1251px) {
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* 2x2 layout for smaller screens */
+@media (max-width: 1250px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Stack on very small screens */
+@media (max-width: 450px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 
 #statsSection{
