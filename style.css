@@ -492,6 +492,10 @@ svg{
     background: linear-gradient(to right, transparent, #fc508a, transparent);
 }
 
+.lightblue {
+    background: linear-gradient(to right, transparent, #90D5FF, transparent);
+}
+
 .flex
 {
     display: flex;
@@ -519,6 +523,9 @@ svg{
 
 .number-orange {
     color: #f57c00;
+}
+.number-light-blue {
+    color: #90D5FF;
 }
 
 .description {
